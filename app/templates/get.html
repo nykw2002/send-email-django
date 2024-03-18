@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+{% block title %}get{% endblock %}
+{% block content%}
+
+
+<div class="flex items-center justify-center flex-col w-[100vw] h-[100vh] bg-neutral-50">
+	<div class="border rounded-md shadow-xl bg-white p-4 ">
+		<form class="" hx-post="{% url 'Home' %}" hx-trigger="submit" hx-target="#test" hx-swap="innerHTML">
+			<div>
+				<label for="email">email:</label>
+				<input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" />
+			</div>
+			<div>
+				<label for="cui">cui</label>
+				<input type="text" name="cui" id="cui" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" />
+			</div>
+			<button type="submit" class="bg-blue-500 text-white p-2">Submit</button>
+		</form>
+		<div id="test"></div>
+	</div>
+</div>
+{% endblock content %}
